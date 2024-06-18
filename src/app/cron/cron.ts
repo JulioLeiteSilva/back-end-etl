@@ -4,7 +4,7 @@ import { makeGetDailyUsersConstroller } from "../../factories/controller/makeGet
 export function getAllSaveDailyUsersCron() {
   const DailyUsersConstroller = makeGetDailyUsersConstroller();
 
-  return cron.schedule("0 3 * * *", async () => {
+  return cron.schedule("40 20 * * *", async () => {
     await DailyUsersConstroller.execute();
   });
 }

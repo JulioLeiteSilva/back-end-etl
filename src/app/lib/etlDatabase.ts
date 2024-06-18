@@ -37,8 +37,8 @@ export const EtlDatabase = new sqlite3.Database("etl.sqlite", (err) => {
         throw err;
       }
     });
-    // if (process.env.NODE_ENV === "development") {
-    //   console.log("ETL Database connected");
-    // }
+    if (process.env.NODE_ENV === "development") {
+      console.log("ETL Database connected");
+    }
   }
 });
