@@ -1,3 +1,12 @@
-import server from "./server";
+import {getAllSaveDailyUsersCron} from "./app/cron/cron"
 
-server.listen(8001);
+console.log("ETL is running");
+
+class ManageCronJobs {
+  private jobs = [getAllSaveDailyUsersCron];
+
+  public run() {
+    this.jobs.forEach((job) => job());
+  }
+}
+new ManageCronJobs().run();
